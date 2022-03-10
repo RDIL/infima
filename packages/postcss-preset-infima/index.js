@@ -16,9 +16,11 @@ const postcssNestedAncestors = require('postcss-nested-ancestors');
 const postcssMixins = require('postcss-mixins');
 const postcssCombineDuplicatedSelectors = require('postcss-combine-duplicated-selectors');
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
+const postcssColorModFunction = require('@rdil/postcss-color-mod-function');
 
 module.exports = () => ({
   plugins: [
+    postcssColorModFunction({transformVars: true}),
     postcssImport,
     postcssEach,
     postcssFor,
